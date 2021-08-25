@@ -26,12 +26,21 @@ Route::prefix('admin')
         ->name('dashboard');
         Route::resource('category', 'CategoryController');
         Route::resource('sub-category', 'SubCategoryController');
-        Route::resource('data-record', 'DataRecordController');
+        // Route::resource('data-record', 'DataRecordController');
         
     });
-
     Route::resource('data-record', 'DataRecordController');
-    
+// Route::prefix('staff')
+//     ->namespace('Staff')
+//     ->middleware(['auth','staff'])
+//     ->group(function(){
+//         Route::get('/', 'DashboardStaffController@index')
+//         ->name('dashboard');
+//         Route::resource('data-record', 'DataRecordController');
+        
+//     });
+
+
 Auth::routes(['verify' => true]);
 
 Route::get('/home', 'HomeController@index')->name('home');

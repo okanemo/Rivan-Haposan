@@ -15,7 +15,11 @@
                     @endif
 
                     {{ __('You are logged in!') }}
+
+                    
                 </div>
+                <a class="btn btn-primary" style="margin: 10px" href="{{'admin'}}" role="button" >Go to Admin Dashboard</a>
+                <a class="btn btn-primary" style="margin: 10px"  href="{{'data-record'}}" role="button" >Go to Staff Dashboard</a>
             </div>
         </div>
     </div>
