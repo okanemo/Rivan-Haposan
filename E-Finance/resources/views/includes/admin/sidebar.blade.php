@@ -23,7 +23,7 @@
             <span>Categories</span></a>
     </li>
     <li class="nav-item">
-        <a class="nav-link" href="index.html">
+        <a class="nav-link" href="{{route('sub-category.index')}}">
             <i class="fas fa-fw fa-clipboard"></i>
             <span>Sub-Categories</span></a>
     </li>

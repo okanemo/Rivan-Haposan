@@ -6,17 +6,17 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 
-class Category extends Model
+class SubCategory extends Model
 {
     use SoftDeletes;
 
     protected $fillable = [
-        'title', 'slug'
+        'categories_id','title'
     ];
 
     protected $hidden = [];
 
-    public function subcategories(){
-        return $this->hasMany(SubCategory::class, 'categories_id', 'id');
+    public function category(){
+        return $this->belongsTo(Category::class, 'categories_id','id');
     }
 }

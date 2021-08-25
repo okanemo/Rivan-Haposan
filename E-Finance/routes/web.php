@@ -25,6 +25,7 @@ Route::prefix('admin')
         Route::get('/', 'DashboardController@index')
         ->name('dashboard');
         Route::resource('category', 'CategoryController');
+        Route::resource('sub-category', 'SubCategoryController');
     });
 
 Auth::routes(['verify' => true]);
