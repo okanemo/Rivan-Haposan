@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Requests\Admin;
+namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class SubCategoryRequest extends FormRequest
+class DataRecordRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,8 +24,9 @@ class SubCategoryRequest extends FormRequest
     public function rules()
     {
         return [
-            'categories_id' => 'required|integer|exists:categories,id',
-            'title' => 'required|max:255'
+            'sub_categories_id' => 'required|integer|exists:sub_categories,id',
+            'description' => 'required|max:255',
+            'transaction' => 'required|integer'
         ];
     }
 }

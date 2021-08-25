@@ -6,9 +6,9 @@
 
         <!-- Page Heading -->
         <div class="d-sm-flex align-items-center justify-content-between mb-4">
-            <h1 class="h3 mb-0 text-gray-800">Category</h1>
-            <a href="{{route('category.create')}}" class="btn btn-sm btn-primary shadow-sm">
-            <i class="fas fa-plus fa-sm text-white-50"></i> Add Category
+            <h1 class="h3 mb-0 text-gray-800">Data Records</h1>
+            <a href="{{route('data-record.create')}}" class="btn btn-sm btn-primary shadow-sm">
+            <i class="fas fa-plus fa-sm text-white-50"></i> Add Data Record
             </a>
         </div>
 
@@ -19,7 +19,9 @@
                         <thead>
                             <tr>
                                 {{-- <th>ID</th> --}}
-                                <th>Category Name</th>
+                                <th>Sub-Category</th>
+                                <th>Description</th>
+                                <th>Transaction</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
@@ -27,11 +29,13 @@
                             @forelse ($items as $item)
                             <tr>
                                 {{-- <td>{{$item->id}}</td> --}}
-                                <td>{{$item->title}}</td>
+                                <td>{{$item->sub_category->title}}</td>
+                                <td>{{$item->description}}</td>
+                                <td>{{$item->transaction}}</td>
                                 <td>
-                                    <a href="{{route('category.edit', $item->id)}}" class="btn btn-info">
+                                    <a href="{{route('data-record.edit', $item->id)}}" class="btn btn-info">
                                     <i class="fa fa-pencil-alt"></i></a>
-                                    <form action="{{route('category.destroy', $item->id)}}" method="POST" class="d-inline">
+                                    <form action="{{route('data-record.destroy', $item->id)}}" method="POST" class="d-inline">
                                     @csrf
                                     @method('delete')
                                     <button class="btn btn-danger">

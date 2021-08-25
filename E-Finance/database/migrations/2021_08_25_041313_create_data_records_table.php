@@ -16,7 +16,8 @@ class CreateDataRecordsTable extends Migration
         Schema::create('data_records', function (Blueprint $table) {
             $table->id();
             $table->integer('sub_categories_id');
-            $table->string('title');
+            $table->string('description');
+            $table->integer('transaction');
             $table->softDeletes();
             $table->timestamps();
         });

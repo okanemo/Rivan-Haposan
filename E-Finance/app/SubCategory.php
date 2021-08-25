@@ -19,4 +19,8 @@ class SubCategory extends Model
     public function category(){
         return $this->belongsTo(Category::class, 'categories_id','id');
     }
+
+    public function datarecords(){
+        return $this->hasMany(DataRecord::class, 'sub_categories_id', 'id');
+    }
 }
